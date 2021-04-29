@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "wp --mode production",
-    "dev": "wp --mode development"
+    "dev": "wp --mode development",
+    "styleguild": "styleguidist server",
+    "styleguild:build": "styleguidist build"
   },
   "repository": {
     "type": "git",
