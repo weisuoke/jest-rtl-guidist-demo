@@ -7,7 +7,9 @@
     "build": "wp --mode production",
     "dev": "wp --mode development",
     "styleguild": "styleguidist server",
-    "styleguild:build": "styleguidist build"
+    "styleguild:build": "styleguidist build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -33,7 +35,14 @@
     "@babel/core": "^7.13.16",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-webpack5": "^6.2.9",
+    "@storybook/react": "^6.2.9",
     "@testing-library/react": "^11.2.6",
+    "autoprefixer": "^10.2.5",
     "babel-loader": "^8.2.2",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
@@ -44,6 +53,7 @@
     "lint-staged": "^10.5.4",
     "mini-html-webpack-plugin": "^3.1.3",
     "msw": "^0.28.2",
+    "postcss-flexbugs-fixes": "^5.0.2",
     "prettier": "2.2.1",
     "react-app-polyfill": "^2.0.0",
     "react-styleguidist": "^11.1.6",
@@ -51,5 +61,15 @@
     "webpack-merge": "^5.7.3",
     "webpack-nano": "^1.1.1",
     "webpack-plugin-serve": "^1.4.1"
+  },
+  "resolutions": {
+    "webpack": "^5.35.1",
+    "css-loader": "^5.0.1",
+    "dotenv-webpack": "^7.0.2",
+    "html-webpack-plugin": "^5.0.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack-dev-middleware": "^4.1.0",
+    "webpack-virtual-modules": "^0.4.2"
   }
 }
