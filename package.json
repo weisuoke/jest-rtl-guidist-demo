@@ -28,6 +28,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.16",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
