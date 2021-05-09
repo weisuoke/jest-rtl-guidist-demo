@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path");
 const { mode } = require("webpack-nano/argv");
 const { merge } = require("webpack-merge");
 const parts = require("./webpack.parts");
@@ -9,10 +9,13 @@ const commonConfig = merge([
     output: {
       path: path.join(__dirname, "dist"), // Output to dist directory
       filename: "[name].js", // Emit app.js by capturing entry name
+      publicPath: "/",
     },
   },
   parts.customTemplatePage(),
   parts.loadJavaScript(),
+  parts.loadCSS(),
+  parts.loadLESS(),
 ]);
 
 const productionConfig = merge([]);

@@ -1,10 +1,10 @@
-const path = require('path')
-const {WebpackPluginServe} = require("webpack-plugin-serve");
+const path = require("path");
+const { WebpackPluginServe } = require("webpack-plugin-serve");
 const {
   MiniHtmlWebpackPlugin,
   generateAttributes,
   generateCSSReferences,
-  generateJSReferences
+  generateJSReferences,
 } = require("mini-html-webpack-plugin");
 
 const APP_SOURCE = path.join(__dirname, "src");
@@ -17,12 +17,16 @@ exports.devServer = () => ({
       static: "./dist", // Expose if output.path changes
       liveReload: true,
       waitForBuild: true,
+      historyFallback: {
+        logger: console.log.bind(console),
+        verbose: true,
+      },
     }),
   ],
 });
 
-exports.page = ({title}) => ({
-  plugins: [new MiniHtmlWebpackPlugin({context: {title}})],
+exports.page = ({ title }) => ({
+  plugins: [new MiniHtmlWebpackPlugin({ context: { title } })],
 });
 
 exports.customTemplatePage = () => ({
@@ -31,13 +35,13 @@ exports.customTemplatePage = () => ({
       context: {
         title: "React demo",
         htmlAttributes: {
-          lang: 'en',
+          lang: "en",
         },
-        head: '',
-        body: '',
+        head: "",
+        body: "",
         cssAttributes: {
-          rel: 'preload',
-          as: 'style',
+          rel: "preload",
+          as: "style",
         },
         jsAttributes: {
           defer: true,
@@ -50,7 +54,7 @@ exports.customTemplatePage = () => ({
         title,
         htmlAttributes,
         cssAttributes,
-        jsAttributes
+        jsAttributes,
       }) => {
         const htmlAttrs = generateAttributes(htmlAttributes);
         const cssTags = generateCSSReferences({
@@ -62,7 +66,7 @@ exports.customTemplatePage = () => ({
         const jsTags = generateJSReferences({
           files: js,
           attributes: jsAttributes,
-          publicPath,
+          publicPath: "/",
         });
 
         return `<!DOCTYPE html>
@@ -77,16 +81,38 @@ exports.customTemplatePage = () => ({
               ${jsTags}
             </body>
           </html>`;
-      }
-    })
-  ]
-})
+      },
+    }),
+  ],
+});
 
 exports.loadJavaScript = () => ({
   module: {
     rules: [
       // Consider extracting include as a parameter
-      {test: /\.js$/, include: APP_SOURCE, use: "babel-loader"},
+      { test: /\.js$/, include: APP_SOURCE, use: "babel-loader" },
+    ],
+  },
+});
+
+exports.loadCSS = () => ({
+  module: {
+    rules: [{ test: /\.css$/, use: ["style-loader", "css-loader"] }],
+  },
+});
+
+exports.loadLESS = () => ({
+  module: {
+    rules: [
+      {
+        test: /\.less$/i,
+        use: [
+          // compiles Less to CSS
+          "style-loader",
+          "css-loader",
+          "less-loader",
+        ],
+      },
     ],
   },
 });
