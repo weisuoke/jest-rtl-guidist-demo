@@ -10,7 +10,8 @@
     "styleguild:build": "styleguidist build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "jest src --watchAll"
+    "test": "jest src",
+    "test:watch": "jest src --watchAll"
   },
   "repository": {
     "type": "git",
