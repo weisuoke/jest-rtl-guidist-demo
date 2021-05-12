@@ -10,9 +10,6 @@ module.exports = {
   testEnvironment: "jsdom",
   testRunner: "jest-circus/runner",
   transform: {
-    // "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
-    // "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-    // "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     "\\.[jt]sx?$": "babel-jest",
   },
   transformIgnorePatterns: [
@@ -22,6 +19,7 @@ module.exports = {
   modulePaths: [],
   moduleNameMapper: {
     "^react-native$": "react-native-web",
+    "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js",
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy", // 第三方模块，测试css module时使用
   },
   moduleFileExtensions: [
