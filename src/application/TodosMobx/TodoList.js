@@ -18,6 +18,7 @@ const TodoList = ({ store }) => {
       <div>========</div>
       <div>
         <input
+          data-test-id="todo-input"
           type="text"
           value={inputTodo}
           onChange={(e) => {
@@ -26,6 +27,7 @@ const TodoList = ({ store }) => {
           }}
         />
         <button
+          data-test-id="add-button"
           onClick={() => {
             addTodo(inputTodo);
             changeInputTodo("");
@@ -67,8 +69,10 @@ TodoList.propTypes = {
     changeInputTodo: PropTypes.func,
     toggleTodo: PropTypes.func,
     deleteTodo: PropTypes.func,
-    todoList: PropTypes.arrayOf(),
+    todoList: PropTypes.arrayOf(PropTypes.shape({})),
   }).isRequired,
 };
 
 export default observer(TodoList);
+
+export { TodoList }
