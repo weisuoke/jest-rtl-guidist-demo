@@ -31,11 +31,16 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.16",
+    "axios": "^0.21.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "mobx": "^6.3.0",
     "mobx-react": "^7.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
