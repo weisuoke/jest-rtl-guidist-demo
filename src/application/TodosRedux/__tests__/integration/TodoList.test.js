@@ -5,6 +5,24 @@ import { findTestWrapper } from "../../../../lib/utils/testUtils";
 import TodoList from '../../index'
 import store from '../../../../store/createStore'
 
+const mockUndoList = {
+  data: [{
+    status: 'div',
+    value: 'dell lee'
+  }],
+  success: true
+}
+
+jest.mock('axios', () => ({
+  get: (url) => {
+    if (url === '/undolist.json') {
+      return new Promise((resolve) => {
+        resolve(mockUndoList)
+      })
+    }
+  }
+}))
+
 it(`
   1. Header 输入框输入内容
   2. 点击回车

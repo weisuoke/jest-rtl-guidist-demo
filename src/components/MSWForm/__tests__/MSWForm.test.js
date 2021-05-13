@@ -3,6 +3,15 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import MSWForm from "../MSWForm";
 
+// TODO 优化，移动到 jest.setup.js
+import { server } from "../../../mocks/server";
+
+beforeAll(() => server.listen());
+
+afterEach(() => server.resetHandlers());
+
+afterAll(() => server.close());
+
 describe("LoginForm", () => {
   it("should allow a user to log in", async () => {
     render(<MSWForm />);
