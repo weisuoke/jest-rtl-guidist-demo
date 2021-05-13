@@ -34,6 +34,9 @@ module.exports = {
     "jsx",
     "node",
   ],
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer",
+  ],
   watchPlugins: [
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname",
