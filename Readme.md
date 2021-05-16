@@ -19,7 +19,7 @@ React 各种技术栈试用比较仓库
 4. 前端测试在各种状态管理中的应用
    - redux
    - mobx
-   - xState
+   - xstate
    - recoil
 5. css 方案的使用
    - tailwind
@@ -27,12 +27,16 @@ React 各种技术栈试用比较仓库
      - styled-components
    - less
 6. CI/CD
-   - travis-ci
+   - CI
+     - travis-ci
+   - Docker
+   - K8s
 
 ## 探索
 
 1. 前端监控系统
 2. 脚手架
+3. ...
 
 ## Official Documents
 
@@ -41,8 +45,16 @@ React 各种技术栈试用比较仓库
 - [react-styleguidist]()
 - [storybook](https://storybook.js.org/)
 
-### Relate Project
-
+## Relate Project
 - 本项目 TS 版本（待开发）
 - react-with-snowpack（待开发）
 - react-with-vite（待开发）
+
+## Todo
+
+- [ ] simple xstate todolist with jest
+- [ ] test relay Query/Mutations
+- [ ] CI/CD
+    - [ ] Jenkins
+    - [ ] Docker
+    - [ ] K8s

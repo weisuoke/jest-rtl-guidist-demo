@@ -4,6 +4,15 @@ import { render, fireEvent, screen } from "@testing-library/react";
 import { client } from "../../../ApolloClient";
 import MSWGraphQLForm from "../MSWGraphQLForm";
 
+// TODO 优化，移动到 jest.setup.js
+import { server } from "../../../mocks/server";
+
+beforeAll(() => server.listen());
+
+afterEach(() => server.resetHandlers());
+
+afterAll(() => server.close());
+
 describe("MSWGraphQLForm", () => {
   it("should allow user to log in", async () => {
     render(

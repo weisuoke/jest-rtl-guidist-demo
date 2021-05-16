@@ -7,8 +7,8 @@ import Adapter from 'enzyme-adapter-react-16'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-beforeAll(() => server.listen());
-
-afterEach(() => server.resetHandlers());
-
-afterAll(() => server.close());
+// beforeAll(() => server.listen());
+//
+// afterEach(() => server.resetHandlers());
+//
+// afterAll(() => server.close());

@@ -86,6 +86,7 @@
     "regenerator-runtime": "^0.13.7",
     "styled-loader": "^0.0.0",
     "webpack": "^5.35.1",
+    "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3",
     "webpack-nano": "^1.1.1",
     "webpack-plugin-serve": "^1.4.1"
@@ -97,7 +98,6 @@
     "html-webpack-plugin": "^5.0.0",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.1.1",
-    "webpack-dev-middleware": "^4.1.0",
     "webpack-virtual-modules": "^0.4.2"
   }
 }

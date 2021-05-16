@@ -8,7 +8,9 @@ const App = () => {
     <div>
       React
       <Router>
-        <Link to="/todos/mobx">Mobx Todos</Link>
+        <Link to="/todos/basic">Basic Todos</Link> ||
+        <Link to="/todos/mobx">Mobx Todos</Link> ||
+        <Link to="/todos/redux">Mobx Todos</Link>
         <Routes />
       </Router>
     </div>
