@@ -3,6 +3,7 @@ const { version } = require('./package');
 
 module.exports = {
   components: 'src/components/**/[A-Z]*.js',
+  ignore: ['src/components/**/*.stories.js', 'src/components/**/*.test.js'],
   defaultExample: true,
   moduleAliases: {
     'rsg-example': path.resolve(__dirname, 'src'),
